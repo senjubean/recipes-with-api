@@ -17,12 +17,18 @@ import {React, useEffect, useState} from 'react'
           
           }
 
+
+   
   return (
     <div>
       {popular.map((recipe)=>{
-        return (
-          <div id={recipe.id}>{recipe.title}</div>
-        )
+        if(!recipe.glutenFree){
+          return (
+            <div id={recipe.id}>{recipe.title}</div>
+          )
+
+        }
+      
       })}
     </div>
   )
